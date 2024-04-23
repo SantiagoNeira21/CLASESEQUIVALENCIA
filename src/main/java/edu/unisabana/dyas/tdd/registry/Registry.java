@@ -13,6 +13,9 @@ public class Registry {
         if (p.getAge() < 18) {
             return RegisterResult.UNDERAGE;
         }
+        if (p.getAge() > 120) {
+            return RegisterResult.INVALID_AGE;
+        }
         if (registeredIds.contains(p.getId())) {
             return RegisterResult.DUPLICATED;
         }
